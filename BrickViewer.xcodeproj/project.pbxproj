@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		70569481201F1A07009EDA60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70569480201F1A07009EDA60 /* AppDelegate.swift */; };
+		70569483201F1A07009EDA60 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70569482201F1A07009EDA60 /* GameViewController.swift */; };
+		70569485201F1A07009EDA60 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 70569484201F1A07009EDA60 /* art.scnassets */; };
+		70569487201F1A07009EDA60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70569486201F1A07009EDA60 /* Assets.xcassets */; };
+		7056948A201F1A07009EDA60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70569488201F1A07009EDA60 /* Main.storyboard */; };
+		70569496201F1A07009EDA60 /* BrickViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70569495201F1A07009EDA60 /* BrickViewerUITests.swift */; };
+		705694A1201F1A7F009EDA60 /* LogWrapperKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 705694A0201F1A7F009EDA60 /* LogWrapperKit.framework */; };
+		705694A2201F1A7F009EDA60 /* LogWrapperKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 705694A0201F1A7F009EDA60 /* LogWrapperKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		705694A5201F1A84009EDA60 /* LDrawKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 705694A4201F1A84009EDA60 /* LDrawKit.framework */; };
+		705694A6201F1A84009EDA60 /* LDrawKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 705694A4201F1A84009EDA60 /* LDrawKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		705694A9201F1ADB009EDA60 /* SCNGeometry+Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705694A8201F1ADB009EDA60 /* SCNGeometry+Line.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		70569492201F1A07009EDA60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70569475201F1A07009EDA60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7056947C201F1A07009EDA60;
+			remoteInfo = BrickViewer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		705694A3201F1A7F009EDA60 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				705694A6201F1A84009EDA60 /* LDrawKit.framework in Embed Frameworks */,
+				705694A2201F1A7F009EDA60 /* LogWrapperKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7056947D201F1A07009EDA60 /* BrickViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrickViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		70569480201F1A07009EDA60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		70569482201F1A07009EDA60 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		70569484201F1A07009EDA60 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		70569486201F1A07009EDA60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		70569489201F1A07009EDA60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7056948B201F1A07009EDA60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7056948C201F1A07009EDA60 /* BrickViewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BrickViewer.entitlements; sourceTree = "<group>"; };
+		70569491201F1A07009EDA60 /* BrickViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrickViewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70569495201F1A07009EDA60 /* BrickViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrickViewerUITests.swift; sourceTree = "<group>"; };
+		70569497201F1A07009EDA60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		705694A0201F1A7F009EDA60 /* LogWrapperKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LogWrapperKit.framework; path = Carthage/Build/Mac/LogWrapperKit.framework; sourceTree = "<group>"; };
+		705694A4201F1A84009EDA60 /* LDrawKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LDrawKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		705694A8201F1ADB009EDA60 /* SCNGeometry+Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+Line.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7056947A201F1A07009EDA60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				705694A5201F1A84009EDA60 /* LDrawKit.framework in Frameworks */,
+				705694A1201F1A7F009EDA60 /* LogWrapperKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7056948E201F1A07009EDA60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		70569474201F1A07009EDA60 = {
+			isa = PBXGroup;
+			children = (
+				705694A4201F1A84009EDA60 /* LDrawKit.framework */,
+				705694A0201F1A7F009EDA60 /* LogWrapperKit.framework */,
+				7056947F201F1A07009EDA60 /* BrickViewer */,
+				70569494201F1A07009EDA60 /* BrickViewerUITests */,
+				7056947E201F1A07009EDA60 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7056947E201F1A07009EDA60 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7056947D201F1A07009EDA60 /* BrickViewer.app */,
+				70569491201F1A07009EDA60 /* BrickViewerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7056947F201F1A07009EDA60 /* BrickViewer */ = {
+			isa = PBXGroup;
+			children = (
+				705694A7201F1ABE009EDA60 /* Extensions */,
+				70569480201F1A07009EDA60 /* AppDelegate.swift */,
+				70569482201F1A07009EDA60 /* GameViewController.swift */,
+				70569484201F1A07009EDA60 /* art.scnassets */,
+				70569486201F1A07009EDA60 /* Assets.xcassets */,
+				70569488201F1A07009EDA60 /* Main.storyboard */,
+				7056948B201F1A07009EDA60 /* Info.plist */,
+				7056948C201F1A07009EDA60 /* BrickViewer.entitlements */,
+			);
+			path = BrickViewer;
+			sourceTree = "<group>";
+		};
+		70569494201F1A07009EDA60 /* BrickViewerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				70569495201F1A07009EDA60 /* BrickViewerUITests.swift */,
+				70569497201F1A07009EDA60 /* Info.plist */,
+			);
+			path = BrickViewerUITests;
+			sourceTree = "<group>";
+		};
+		705694A7201F1ABE009EDA60 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				705694A8201F1ADB009EDA60 /* SCNGeometry+Line.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7056947C201F1A07009EDA60 /* BrickViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7056949A201F1A07009EDA60 /* Build configuration list for PBXNativeTarget "BrickViewer" */;
+			buildPhases = (
+				70569479201F1A07009EDA60 /* Sources */,
+				7056947A201F1A07009EDA60 /* Frameworks */,
+				7056947B201F1A07009EDA60 /* Resources */,
+				705694A3201F1A7F009EDA60 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BrickViewer;
+			productName = BrickViewer;
+			productReference = 7056947D201F1A07009EDA60 /* BrickViewer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		70569490201F1A07009EDA60 /* BrickViewerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7056949D201F1A07009EDA60 /* Build configuration list for PBXNativeTarget "BrickViewerUITests" */;
+			buildPhases = (
+				7056948D201F1A07009EDA60 /* Sources */,
+				7056948E201F1A07009EDA60 /* Frameworks */,
+				7056948F201F1A07009EDA60 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70569493201F1A07009EDA60 /* PBXTargetDependency */,
+			);
+			name = BrickViewerUITests;
+			productName = BrickViewerUITests;
+			productReference = 70569491201F1A07009EDA60 /* BrickViewerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		70569475201F1A07009EDA60 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Shane Whitehead";
+				TargetAttributes = {
+					7056947C201F1A07009EDA60 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					70569490201F1A07009EDA60 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7056947C201F1A07009EDA60;
+					};
+				};
+			};
+			buildConfigurationList = 70569478201F1A07009EDA60 /* Build configuration list for PBXProject "BrickViewer" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 70569474201F1A07009EDA60;
+			productRefGroup = 7056947E201F1A07009EDA60 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7056947C201F1A07009EDA60 /* BrickViewer */,
+				70569490201F1A07009EDA60 /* BrickViewerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7056947B201F1A07009EDA60 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7056948A201F1A07009EDA60 /* Main.storyboard in Resources */,
+				70569487201F1A07009EDA60 /* Assets.xcassets in Resources */,
+				70569485201F1A07009EDA60 /* art.scnassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7056948F201F1A07009EDA60 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70569479201F1A07009EDA60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				705694A9201F1ADB009EDA60 /* SCNGeometry+Line.swift in Sources */,
+				70569483201F1A07009EDA60 /* GameViewController.swift in Sources */,
+				70569481201F1A07009EDA60 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7056948D201F1A07009EDA60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70569496201F1A07009EDA60 /* BrickViewerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		70569493201F1A07009EDA60 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7056947C201F1A07009EDA60 /* BrickViewer */;
+			targetProxy = 70569492201F1A07009EDA60 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		70569488201F1A07009EDA60 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70569489201F1A07009EDA60 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		70569498201F1A07009EDA60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		70569499201F1A07009EDA60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		7056949B201F1A07009EDA60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BrickViewer/BrickViewer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YWXH886EY3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = BrickViewer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.kaizen.BrickViewer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		7056949C201F1A07009EDA60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BrickViewer/BrickViewer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YWXH886EY3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = BrickViewer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.kaizen.BrickViewer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		7056949E201F1A07009EDA60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YWXH886EY3;
+				INFOPLIST_FILE = BrickViewerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.kaizen.BrickViewerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = BrickViewer;
+			};
+			name = Debug;
+		};
+		7056949F201F1A07009EDA60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YWXH886EY3;
+				INFOPLIST_FILE = BrickViewerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.kaizen.BrickViewerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = BrickViewer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70569478201F1A07009EDA60 /* Build configuration list for PBXProject "BrickViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70569498201F1A07009EDA60 /* Debug */,
+				70569499201F1A07009EDA60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7056949A201F1A07009EDA60 /* Build configuration list for PBXNativeTarget "BrickViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7056949B201F1A07009EDA60 /* Debug */,
+				7056949C201F1A07009EDA60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7056949D201F1A07009EDA60 /* Build configuration list for PBXNativeTarget "BrickViewerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7056949E201F1A07009EDA60 /* Debug */,
+				7056949F201F1A07009EDA60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 70569475201F1A07009EDA60 /* Project object */;
+}
