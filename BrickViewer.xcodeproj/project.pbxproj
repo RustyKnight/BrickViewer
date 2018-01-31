@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70049A212021736400F059E0 /* MultiPointCommand+SceneKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70049A202021736400F059E0 /* MultiPointCommand+SceneKit.swift */; };
 		70569481201F1A07009EDA60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70569480201F1A07009EDA60 /* AppDelegate.swift */; };
 		70569483201F1A07009EDA60 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70569482201F1A07009EDA60 /* GameViewController.swift */; };
 		70569485201F1A07009EDA60 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 70569484201F1A07009EDA60 /* art.scnassets */; };
@@ -50,6 +51,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		70049A202021736400F059E0 /* MultiPointCommand+SceneKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MultiPointCommand+SceneKit.swift"; sourceTree = "<group>"; };
 		7056947D201F1A07009EDA60 /* BrickViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrickViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70569480201F1A07009EDA60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70569482201F1A07009EDA60 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				706D36B32021611000EBFA1A /* TriangleCommand+SceneKit.swift */,
 				706D36B52021619100EBFA1A /* Command+SceneKit.swift */,
 				706D36B72021633C00EBFA1A /* QuadrilateralCommand+SceneKit.swift */,
+				70049A202021736400F059E0 /* MultiPointCommand+SceneKit.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70049A212021736400F059E0 /* MultiPointCommand+SceneKit.swift in Sources */,
 				705694A9201F1ADB009EDA60 /* SCNGeometry+Line.swift in Sources */,
 				706D36B82021633C00EBFA1A /* QuadrilateralCommand+SceneKit.swift in Sources */,
 				706D36B62021619100EBFA1A /* Command+SceneKit.swift in Sources */,

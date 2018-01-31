@@ -13,16 +13,16 @@ import QuartzCore
 
 extension LineCommand {
   
-  var from: SCNVector3 {
-    return vector3(from: points[0])
+  func from(inverted: Bool = false) -> SCNVector3 {
+    return vertices(inverted: inverted)[0]
   }
   
-  var to: SCNVector3 {
-    return vector3(from: points[1])
+  func to(inverted: Bool = false) -> SCNVector3 {
+    return vertices(inverted: inverted)[1]
   }
   
-  var geometry: SCNGeometry {
-    return SCNGeometry.lineFrom(vector: from, toVector: to)
+  func geometry(inverted: Bool = false) -> SCNGeometry {
+    return SCNGeometry.lineFrom(vector: from(inverted: inverted), toVector: to(inverted: inverted))
   }
   
 }
