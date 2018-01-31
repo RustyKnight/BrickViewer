@@ -18,6 +18,10 @@
 		705694A5201F1A84009EDA60 /* LDrawKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 705694A4201F1A84009EDA60 /* LDrawKit.framework */; };
 		705694A6201F1A84009EDA60 /* LDrawKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 705694A4201F1A84009EDA60 /* LDrawKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		705694A9201F1ADB009EDA60 /* SCNGeometry+Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705694A8201F1ADB009EDA60 /* SCNGeometry+Line.swift */; };
+		706D36B220215F1500EBFA1A /* LineCommand+SceneKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D36B120215F1500EBFA1A /* LineCommand+SceneKit.swift */; };
+		706D36B42021611000EBFA1A /* TriangleCommand+SceneKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D36B32021611000EBFA1A /* TriangleCommand+SceneKit.swift */; };
+		706D36B62021619100EBFA1A /* Command+SceneKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D36B52021619100EBFA1A /* Command+SceneKit.swift */; };
+		706D36B82021633C00EBFA1A /* QuadrilateralCommand+SceneKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D36B72021633C00EBFA1A /* QuadrilateralCommand+SceneKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,10 @@
 		705694A0201F1A7F009EDA60 /* LogWrapperKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LogWrapperKit.framework; path = Carthage/Build/Mac/LogWrapperKit.framework; sourceTree = "<group>"; };
 		705694A4201F1A84009EDA60 /* LDrawKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LDrawKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		705694A8201F1ADB009EDA60 /* SCNGeometry+Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+Line.swift"; sourceTree = "<group>"; };
+		706D36B120215F1500EBFA1A /* LineCommand+SceneKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LineCommand+SceneKit.swift"; sourceTree = "<group>"; };
+		706D36B32021611000EBFA1A /* TriangleCommand+SceneKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TriangleCommand+SceneKit.swift"; sourceTree = "<group>"; };
+		706D36B52021619100EBFA1A /* Command+SceneKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Command+SceneKit.swift"; sourceTree = "<group>"; };
+		706D36B72021633C00EBFA1A /* QuadrilateralCommand+SceneKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuadrilateralCommand+SceneKit.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +138,10 @@
 			isa = PBXGroup;
 			children = (
 				705694A8201F1ADB009EDA60 /* SCNGeometry+Line.swift */,
+				706D36B120215F1500EBFA1A /* LineCommand+SceneKit.swift */,
+				706D36B32021611000EBFA1A /* TriangleCommand+SceneKit.swift */,
+				706D36B52021619100EBFA1A /* Command+SceneKit.swift */,
+				706D36B72021633C00EBFA1A /* QuadrilateralCommand+SceneKit.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -239,8 +251,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				705694A9201F1ADB009EDA60 /* SCNGeometry+Line.swift in Sources */,
+				706D36B82021633C00EBFA1A /* QuadrilateralCommand+SceneKit.swift in Sources */,
+				706D36B62021619100EBFA1A /* Command+SceneKit.swift in Sources */,
+				706D36B220215F1500EBFA1A /* LineCommand+SceneKit.swift in Sources */,
 				70569483201F1A07009EDA60 /* GameViewController.swift in Sources */,
 				70569481201F1A07009EDA60 /* AppDelegate.swift in Sources */,
+				706D36B42021611000EBFA1A /* TriangleCommand+SceneKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

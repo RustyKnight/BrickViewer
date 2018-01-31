@@ -8,14 +8,17 @@
 
 import SceneKit
 import QuartzCore
+import LDrawKit
+import LogWrapperKit
 
 class GameViewController: NSViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+    
 		// create a new scene
-		let scene = SCNScene(named: "art.scnassets/ship.scn")!
+    let scene = SCNScene()
+//      SCNScene(named: "art.scnassets/ship.scn")!
 		
 		// create and add a camera to the scene
 		let cameraNode = SCNNode()
@@ -40,10 +43,10 @@ class GameViewController: NSViewController {
 		scene.rootNode.addChildNode(ambientLightNode)
 		
 		// retrieve the ship node
-		let ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
+//    let ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
 		
 		// animate the 3d object
-		ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
+//    ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
 		
 		// retrieve the SCNView
 		let scnView = self.view as! SCNView
@@ -67,10 +70,58 @@ class GameViewController: NSViewController {
 		scnView.gestureRecognizers = gestureRecognizers
 		
 		
-		let line = SCNGeometry.lineFrom(vector: SCNVector3Make(0, 0, 0), toVector: SCNVector3Make(10, 10, 10))
-		let node = SCNNode(geometry: line)
-		scene.rootNode.addChildNode(node)
+//    let line = SCNGeometry.lineFrom(vector: SCNVector3Make(0, 0, 0), toVector: SCNVector3Make(10, 10, 10))
+//    let node = SCNNode(geometry: line)
+//    scene.rootNode.addChildNode(node)
+
+    do {
+      try LDColourManager.shared.load(from: URL(fileURLWithPath: "/Users/swhitehead/Downloads/ldraw/LDConfig.ldr"))
+      
+      let pathPrefix = URL(fileURLWithPath: "/Users/swhitehead/Downloads/ldraw")
+      let partPath = "parts/3005.dat"
+      print("Read \(partPath) from \(pathPrefix)")
+      
+      let part = try Part(pathPrefix: pathPrefix, source: partPath)
+      let model = buildModel(from: part)
+      scene.rootNode.addChildNode(model)
+
+    } catch let error {
+      print(error)
+    }
 	}
+  
+  func buildModel(from part: Part) -> SCNNode {
+    let parentNode = SCNNode()
+    let commands = part.commands
+    parentNode.addChildNode(makeNode(from: commands))
+    return parentNode
+  }
+  
+  func makeNode(from commands: [Command]) -> SCNNode {
+    let parentNode = SCNNode()
+    for command in commands {
+      guard let node = makeNode(from: command) else {
+        continue
+      }
+      parentNode.addChildNode(node)
+    }
+    return parentNode
+  }
+  
+  func makeNode(from command: Command) -> SCNNode? {
+    if let command = command as? CommentCommand {
+      log(debug: "command.bfc = \(command.bfc)")
+    } else if let command = command as? LineCommand {
+      return SCNNode(geometry: command.geometry)
+    } else if let command = command as? TriangleCommand {
+      return SCNNode(geometry: command.geometry)
+    } else if let command = command as? QuadrilateralCommand {
+      return SCNNode(geometry: command.geometry)
+    } else if let command = command as? SubFileCommand {
+      return makeNode(from: command.commands)
+    }
+    return nil
+  }
 	
 	@objc
 	func handleClick(_ gestureRecognizer: NSGestureRecognizer) {
