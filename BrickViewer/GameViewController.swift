@@ -23,7 +23,9 @@ class GameViewController: NSViewController {
 		// create and add a camera to the scene
 		let cameraNode = SCNNode()
 		cameraNode.camera = SCNCamera()
+		cameraNode.scale = SCNVector3(1, -1, 1)
 		scene.rootNode.addChildNode(cameraNode)
+		
 		
 		// place the camera
 		cameraNode.position = SCNVector3(x: 0, y: 0, z: 15)
@@ -75,19 +77,32 @@ class GameViewController: NSViewController {
 //    scene.rootNode.addChildNode(node)
 
     do {
-      try LDColourManager.shared.load(from: URL(fileURLWithPath: "/Users/swhitehead/Downloads/ldraw/LDConfig.ldr"))
+      try LDColourManager.shared.load()
       
-      let pathPrefix = URL(fileURLWithPath: "/Users/swhitehead/Downloads/ldraw")
-      let partPath = "parts/3005.dat"
-      print("Read \(partPath) from \(pathPrefix)")
-      
-      let part = try Part(pathPrefix: pathPrefix, source: partPath)
+//      let partPath = "parts/3005.dat"
+//			let partPath = "box5.dat"
+			let partPath = "stud.dat"
+
+			let part = try PartParser(partName: partPath).parse().conformingTo(winding: .counterClockWise).inverted()
+//			dump(part: part)
+//			log(debug: "---")
+//			let inverted = part.inverted()
+//			dump(part: inverted)
       let model = buildModel(from: part)
+			
       scene.rootNode.addChildNode(model)
 
     } catch let error {
       print(error)
     }
+	}
+	
+	func dump(part: Part) {
+		for command in part.commands {
+			if let command = command as? MultiPointCommand {
+				log(debug: command.points.map( {$0.description } ).joined(separator: "; "))
+			}
+		}
 	}
   
   func buildModel(from part: Part) -> SCNNode {
@@ -107,18 +122,23 @@ class GameViewController: NSViewController {
     }
     return parentNode
   }
-  
+	
   func makeNode(from command: Command) -> SCNNode? {
     if let command = command as? CommentCommand {
-      log(debug: "command.bfc = \(command.bfc)")
+			log(debug: "command.bfc = \(String(describing: command.bfc))")
     } else if let command = command as? LineCommand {
-      return SCNNode(geometry: command.geometry)
+			let geo = command.geometry
+      return SCNNode(geometry: geo)
     } else if let command = command as? TriangleCommand {
-      return SCNNode(geometry: command.geometry)
+			let geo = command.geometry
+			return SCNNode(geometry: geo)
     } else if let command = command as? QuadrilateralCommand {
-      return SCNNode(geometry: command.geometry)
+			let geo = command.geometry
+			return SCNNode(geometry: geo)
     } else if let command = command as? SubFileCommand {
-      return makeNode(from: command.commands)
+      let node = makeNode(from: command.commands)
+			node.transform = command.transformation
+			return node
     }
     return nil
   }

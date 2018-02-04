@@ -13,8 +13,8 @@ import QuartzCore
 
 extension QuadrilateralCommand {
   
-  func geometry(inverted: Bool = false) -> SCNGeometry {
-    let vertexSource = SCNGeometrySource(vertices: vertices(inverted: inverted))
+	var geometry: SCNGeometry {
+    let vertexSource = SCNGeometrySource(vertices: vertices)
     let indices: [Int32] = [4, 0, 1, 2, 3]
     let indexData = Data(bytes: indices, count: indices.count * MemoryLayout<Int32>.size)
     let element = SCNGeometryElement(data: indexData,

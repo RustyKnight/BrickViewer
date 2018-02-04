@@ -12,17 +12,19 @@ import SceneKit
 import QuartzCore
 
 extension LineCommand {
-  
-  func from(inverted: Bool = false) -> SCNVector3 {
-    return vertices(inverted: inverted)[0]
-  }
-  
-  func to(inverted: Bool = false) -> SCNVector3 {
-    return vertices(inverted: inverted)[1]
-  }
-  
-  func geometry(inverted: Bool = false) -> SCNGeometry {
-    return SCNGeometry.lineFrom(vector: from(inverted: inverted), toVector: to(inverted: inverted))
+	
+	var from: SCNVector3 {
+		return vertices[0]
+	}
+	
+	var to: SCNVector3 {
+		return vertices[1]
+	}
+	
+	var geometry: SCNGeometry {
+    let geo = SCNGeometry.lineFrom(vector: from, toVector: to)
+		geo.firstMaterial = material
+		return geo
   }
   
 }

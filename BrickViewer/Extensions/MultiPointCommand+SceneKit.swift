@@ -13,17 +13,8 @@ import QuartzCore
 
 extension MultiPointCommand {
 
-  func vertices(inverted: Bool = false) -> [SCNVector3] {
-    var p = points
-    if inverted {
-      p = p.reversed()
-    }
-    
-    var verts: [SCNVector3] = []
-    for point in p {
-      verts.append(vector3(from: point))
-    }
-    return verts
+	var vertices: [SCNVector3] {
+		return points.map{ vector3(from: $0) }
   }
 
 }
