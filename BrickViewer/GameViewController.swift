@@ -23,7 +23,7 @@ class GameViewController: NSViewController {
 		// create and add a camera to the scene
 		let cameraNode = SCNNode()
 		cameraNode.camera = SCNCamera()
-		cameraNode.scale = SCNVector3(1, -1, 1)
+//		cameraNode.scale = SCNVector3(1, -1, 1)
 		scene.rootNode.addChildNode(cameraNode)
 		
 		
@@ -35,7 +35,20 @@ class GameViewController: NSViewController {
 		lightNode.light = SCNLight()
 		lightNode.light!.type = .omni
 		lightNode.position = SCNVector3(x: 0, y: 10, z: 10)
-		scene.rootNode.addChildNode(lightNode)
+//		scene.rootNode.addChildNode(lightNode)
+
+		let spotLight = SCNNode()
+		spotLight.light = SCNLight()
+		spotLight.light!.type = .spot
+		spotLight.light!.spotInnerAngle = 0;
+		spotLight.light!.spotOuterAngle = 45;
+		spotLight.light!.shadowRadius = 10.0;
+		spotLight.light!.zFar = 10000;
+		spotLight.light!.color = CGColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
+		spotLight.light!.shadowColor = CGColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
+		spotLight.light!.castsShadow = true;
+		spotLight.position = SCNVector3(x: 5, y: 5, z: -5);
+		scene.rootNode.addChildNode(spotLight)
 		
 		// create and add an ambient light to the scene
 		let ambientLightNode = SCNNode()
@@ -44,12 +57,12 @@ class GameViewController: NSViewController {
 		ambientLightNode.light!.color = NSColor.darkGray
 		scene.rootNode.addChildNode(ambientLightNode)
 		
-		// retrieve the ship node
+//		// retrieve the ship node
 //    let ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
-		
-		// animate the 3d object
+//
+//		// animate the 3d object
 //    ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
-		
+//
 		// retrieve the SCNView
 		let scnView = self.view as! SCNView
 		
@@ -78,37 +91,108 @@ class GameViewController: NSViewController {
 
     do {
       try LDColourManager.shared.load()
-      
-//      let partPath = "parts/3005.dat"
+//
+      let partPath = "parts/3005.dat"
 //			let partPath = "box5.dat"
-			let partPath = "stud.dat"
+//			let partPath = "stud.dat"
+//			let partPath = "4-4disc.dat"
+//
+//			let partPath = "box.dat"
+			var part = try PartParser(partName: partPath).parse()
 
-			let part = try PartParser(partName: partPath).parse().conformingTo(winding: .counterClockWise).inverted()
-//			dump(part: part)
-//			log(debug: "---")
+//			let part = SimplePart()
+//			part.commands.append(
+//				DefaultQuadrilateralCommand(text: "text", colour: basicColor, points: [
+//					DefaultPoint3D(x: 1, y: 1, z: 1),
+//					DefaultPoint3D(x: 1, y: 1, z: -1),
+//					DefaultPoint3D(x: -1, y: 1, z: -1),
+//					DefaultPoint3D(x: -1, y: 1, z: 1),
+//					]))
+//
+//			part.commands.append(
+//				DefaultQuadrilateralCommand(text: "text", colour: basicColor, points: [
+//					DefaultPoint3D(x: -1, y: -1, z: -1),
+//					DefaultPoint3D(x: 1, y: -1, z: -1),
+//					DefaultPoint3D(x: 1, y: -1, z: 1),
+//					DefaultPoint3D(x: -1, y: -1, z: 1),
+//					]))
+//
+//			part.commands.append(
+//				DefaultQuadrilateralCommand(text: "text", colour: basicColor, points: [
+//					DefaultPoint3D(x: -1, y: -1, z: 1),
+//					DefaultPoint3D(x: 1, y: -1, z: 1),
+//					DefaultPoint3D(x: 1, y: 1, z: 1),
+//					DefaultPoint3D(x: -1, y: 1, z: 1),
+//					]))
+//
+//			part.commands.append(
+//				DefaultQuadrilateralCommand(text: "text", colour: basicColor, points: [
+//					DefaultPoint3D(x: -1, y: -1, z: -1),
+//					DefaultPoint3D(x: -1, y: -1, z: 1),
+//					DefaultPoint3D(x: -1, y: 1, z: 1),
+//					DefaultPoint3D(x: -1, y: 1, z: -1),
+//					]))
+//
+//			part.commands.append(
+//				DefaultQuadrilateralCommand(text: "text", colour: basicColor, points: [
+//					DefaultPoint3D(x: 1, y: -1, z: -1),
+//					DefaultPoint3D(x: -1, y: -1, z: -1),
+//					DefaultPoint3D(x: -1, y: 1, z: -1),
+//					DefaultPoint3D(x: 1, y: 1, z: -1),
+//					]))
+//
+//			part.commands.append(
+//				DefaultQuadrilateralCommand(text: "text", colour: basicColor, points: [
+//					DefaultPoint3D(x: 1, y: -1, z: 1),
+//					DefaultPoint3D(x: 1, y: -1, z: -1),
+//					DefaultPoint3D(x: 1, y: 1, z: -1),
+//					DefaultPoint3D(x: 1, y: 1, z: 1),
+//					]))
+			
 //			let inverted = part.inverted()
+
+//			dump(part: part)
 //			dump(part: inverted)
       let model = buildModel(from: part)
 			
+			scene.rootNode.castsShadow = true
       scene.rootNode.addChildNode(model)
-
+			
+			spotLight.constraints = [SCNLookAtConstraint(target: model)]
+			
+			
+			let plane = SCNBox(width: 100, height: 1, length: 40, chamferRadius: 10)
+			plane.firstMaterial?.diffuse.contents = CGColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
+			let planeNode = SCNNode(geometry: plane)
+			planeNode.position = SCNVector3(x: 0, y: -10,  z: 0);
+			planeNode.castsShadow = true;
+			scene.rootNode.addChildNode(planeNode);
     } catch let error {
       print(error)
     }
 	}
 	
-	func dump(part: Part) {
-		for command in part.commands {
-			if let command = command as? MultiPointCommand {
-				log(debug: command.points.map( {$0.description } ).joined(separator: "; "))
-			}
-		}
-	}
-  
+//	func dump(part: Part) {
+//		log(debug: "----------")
+//		dump(commands: part.commands)
+//	}
+//
+//	func dump(commands: [Command]) {
+//		for command in commands {
+//			//			if let command = command as? MultiPointCommand {
+//			log(debug: "\(command)")
+////			if let command = command as? SubFileCommand {
+//				dump(commands: command.commands);
+//			}
+//			//			}
+//		}
+//	}
+	
   func buildModel(from part: Part) -> SCNNode {
     let parentNode = SCNNode()
     let commands = part.commands
     parentNode.addChildNode(makeNode(from: commands))
+		parentNode.castsShadow = true
     return parentNode
   }
   
@@ -118,26 +202,41 @@ class GameViewController: NSViewController {
       guard let node = makeNode(from: command) else {
         continue
       }
+			node.castsShadow = true
       parentNode.addChildNode(node)
     }
     return parentNode
   }
 	
+	var invertNext: Bool = false
+	
   func makeNode(from command: Command) -> SCNNode? {
     if let command = command as? CommentCommand {
 			log(debug: "command.bfc = \(String(describing: command.bfc))")
-    } else if let command = command as? LineCommand {
-			let geo = command.geometry
+			guard let bfc = command.bfc else {
+				return nil
+			}
+			invertNext = bfc == .invertNext
+			return nil
+		}
+		if let command = command as? LineCommand {
+			let geo = command.geometry(invertNext: invertNext)
+			invertNext = false
       return SCNNode(geometry: geo)
     } else if let command = command as? TriangleCommand {
-			let geo = command.geometry
+			let geo = command.geometry(invertNext: invertNext)
+			invertNext = false
 			return SCNNode(geometry: geo)
     } else if let command = command as? QuadrilateralCommand {
-			let geo = command.geometry
+			let geo = command.geometry(invertNext: invertNext)
+			invertNext = false
 			return SCNNode(geometry: geo)
     } else if let command = command as? SubFileCommand {
-      let node = makeNode(from: command.commands)
+			let commands = invertNext ? command.inverted().commands : command.commands
+			let node: SCNNode = makeNode(from: commands)
+			invertNext = false
 			node.transform = command.transformation
+			node.position = command.vector3(from: command.location)
 			return node
     }
     return nil

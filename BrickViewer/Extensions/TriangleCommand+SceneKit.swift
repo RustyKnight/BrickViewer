@@ -13,8 +13,9 @@ import QuartzCore
 
 extension TriangleCommand {
   
-	var geometry: SCNGeometry {
-    let vertexSource = SCNGeometrySource(vertices: vertices)
+	func geometry(invertNext: Bool) -> SCNGeometry {
+		let verts = invertNext ? vertices.reversed() : vertices
+    let vertexSource = SCNGeometrySource(vertices: verts)
     let indices: [Int32] = [3, 0, 1, 2]
     let indexData = Data(bytes: indices, count: indices.count * MemoryLayout<Int32>.size)
     let element = SCNGeometryElement(data: indexData,

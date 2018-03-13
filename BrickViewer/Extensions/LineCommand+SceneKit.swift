@@ -21,8 +21,13 @@ extension LineCommand {
 		return vertices[1]
 	}
 	
-	var geometry: SCNGeometry {
-    let geo = SCNGeometry.lineFrom(vector: from, toVector: to)
+	func geometry(invertNext: Bool) -> SCNGeometry {
+		var geo: SCNGeometry!
+		if invertNext {
+			geo = SCNGeometry.lineFrom(vector: to, toVector: from)
+		} else {
+    	geo = SCNGeometry.lineFrom(vector: from, toVector: to)
+		}
 		geo.firstMaterial = material
 		return geo
   }
