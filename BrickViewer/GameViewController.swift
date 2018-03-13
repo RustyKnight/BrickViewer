@@ -155,6 +155,8 @@ class GameViewController: NSViewController {
 //			dump(part: inverted)
       let model = buildModel(from: part)
 			
+			model.rotation = SCNVector4Make(0, 0, 0.5, CGFloat(180.0).degreesToRadians)
+			
 			scene.rootNode.castsShadow = true
       scene.rootNode.addChildNode(model)
 			

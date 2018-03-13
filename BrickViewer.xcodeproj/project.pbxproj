@@ -26,6 +26,7 @@
 		706D36B62021619100EBFA1A /* Command+SceneKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D36B52021619100EBFA1A /* Command+SceneKit.swift */; };
 		706D36B82021633C00EBFA1A /* QuadrilateralCommand+SceneKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706D36B72021633C00EBFA1A /* QuadrilateralCommand+SceneKit.swift */; };
 		70B7F6AC2054D86000CF1CB9 /* SimplePart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B7F6AB2054D86000CF1CB9 /* SimplePart.swift */; };
+		70D909702057DD5A0056339A /* Number+Rads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D9096F2057DD5A0056339A /* Number+Rads.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		706D36B52021619100EBFA1A /* Command+SceneKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Command+SceneKit.swift"; sourceTree = "<group>"; };
 		706D36B72021633C00EBFA1A /* QuadrilateralCommand+SceneKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuadrilateralCommand+SceneKit.swift"; sourceTree = "<group>"; };
 		70B7F6AB2054D86000CF1CB9 /* SimplePart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePart.swift; sourceTree = "<group>"; };
+		70D9096F2057DD5A0056339A /* Number+Rads.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Number+Rads.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 		705694A7201F1ABE009EDA60 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				70D9096F2057DD5A0056339A /* Number+Rads.swift */,
 				7011FE6C2026E482006FC97B /* ColorCommand+SceneKit.swift */,
 				706D36B52021619100EBFA1A /* Command+SceneKit.swift */,
 				706D36B120215F1500EBFA1A /* LineCommand+SceneKit.swift */,
@@ -268,6 +271,7 @@
 				706D36B62021619100EBFA1A /* Command+SceneKit.swift in Sources */,
 				706D36B220215F1500EBFA1A /* LineCommand+SceneKit.swift in Sources */,
 				70569483201F1A07009EDA60 /* GameViewController.swift in Sources */,
+				70D909702057DD5A0056339A /* Number+Rads.swift in Sources */,
 				7011FE6F2026F2C9006FC97B /* SubFileCommand+SceneKit.swift in Sources */,
 				70B7F6AC2054D86000CF1CB9 /* SimplePart.swift in Sources */,
 				7011FE6D2026E482006FC97B /* ColorCommand+SceneKit.swift in Sources */,
